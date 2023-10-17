@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DCJPIN3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <div class="temperature"></div>
+  <img src="empty2.png" alt="" class="weather-icon">
+  <div class="header"> INZ </div>
+  <div class="clock"></div>
+  <nav>
+    <div class="logo">
+      <p></p>
+    </div>
+    <ul>
+      <span class="locations">
+        <li><a href="#" onclick="drawAreas()">DC Areas</a></li>
+        <li><a href="#" onclick="drawSites()">Sites</a></li>
+        <li><a href="#" onclick="drawBuilds()">Current Builds</a></li>
+      </span>
+      <span class="create">
+        <li class="dropdown">
+        <a href="#">Create Person</a>
+        <div class="dropdown-content">
+          <a href="#" onclick="createPerson('manager')">Manager</a>
+          <a href="#" onclick="createPerson('builds')">Builds</a>
+          <a href="#" onclick="createPerson('spares')">Spares</a>
+          <a href="#" onclick="createPerson('sprint')">Sprint</a>
+          <a href="#" onclick="createPerson('reverse')">Reverse</a>
+          <a href="#" onclick="createPerson('temp')">Temp/WH</a>
+        </div>
+      </li>
+      <li><a href="#" onclick="createTask()">Create Task</a></li></span>
+      
+    </ul>
+  </nav>
+  <div class="container" id="buildContainer">
+    <div class="title">
+      <div class="title-box">Build No.</div>
+      <div class="title-box">Phase</div>
+      <div class="title-box">Racks</div>
+      <div class="title-box">Trays</div>
+      <div class="title-box">SLO End</div>
+    </div>
+    <div class="text-boxes">
+      <input class="text-box" type="text", id="buildNo", placeholder=" 12345-67890">
+      <input class="text-box" type="text", id="phase", placeholder=" Rack Scan">
+      <input class="text-box" type="text", id="racks", placeholder=" 0">
+      <input class="text-box" type="text", id="trays", placeholder=" 0">
+      <input class="date-time" type="date-time", id="sloEnd", placeholder=" 12/15 13:30">
+    </div>
+    <button id="submit-button" onclick="createBuild()">Submit New Build</button>
+  </div>
+  
+  <canvas id="canvas"></canvas>
+ 
+</body>
+  <script src="script.js"></script>
+</html>
